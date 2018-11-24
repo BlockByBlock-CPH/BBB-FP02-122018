@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BBBWebApiCodeFirst.Models;
+using System.IO;
 
 namespace BBBWebApiCodeFirst.Controllers
 {
@@ -18,6 +19,57 @@ namespace BBBWebApiCodeFirst.Controllers
         public MtcActivitiesController(DataContext context)
         {
             _context = context;
+
+        //    List<MtcActivity> Data = new List<MtcActivity>();
+
+        //   // var reader = new StreamReader(@"E:\ASP.net\BlockByBlock\New_Data\Activity_MUCNW_example_SW7x24.csv");
+        //    var reader = new StreamReader(@"E:\ASP.net\BlockByBlock\csv\mtc_activity.csv"); 
+
+        //    int i = 0;
+        //    while (!reader.EndOfStream)
+        //    {
+        //        var line = reader.ReadLine();
+        //        var values = line.Split(',');
+
+        //        if (i != 0)
+        //        {
+
+
+        //            MtcActivity single = new MtcActivity
+        //            {
+        //                IdAct= Convert.ToInt32(values[0]),
+        //                ZoneAct = Convert.ToInt32(values[1]),
+        //                CountAct = Convert.ToInt32(values[2]),
+        //                HoursAct = Convert.ToInt32(values[3]),
+        //                DaysAct = Convert.ToInt32(values[4]),
+        //                Density = Convert.ToDecimal(values[5])
+
+        //            };
+
+
+        //            //if (values[2] == "MON")
+        //            //    single.DaysAct = 1;
+        //            //else if (values[2] == "TUE")
+        //            //    single.DaysAct = 2;
+        //            //else if (values[2] == "WED")
+        //            //    single.DaysAct = 3;
+        //            //else if (values[2] == "THU")
+        //            //    single.DaysAct = 4;
+        //            //else if (values[2] == "FRI")
+        //            //    single.DaysAct = 5;
+        //            //else if (values[2] == "SAT")
+        //            //    single.DaysAct = 6;
+        //            //else if (values[2] == "SUN")
+        //            //    single.DaysAct = 7;
+
+        //            Data.Add(single);
+
+        //        }
+        //        i++;
+        //    }
+
+        //    _context.MtcActivitys.AddRange(Data);           
+        //    _context.SaveChanges();
         }
 
         // GET: api/MtcActivities
@@ -25,7 +77,10 @@ namespace BBBWebApiCodeFirst.Controllers
         public IEnumerable<MtcActivity> GetMtcActivitys()
         {
             return _context.MtcActivitys;
+
         }
+
+        
 
         // GET: api/MtcActivities/5
         [HttpGet("{id}")]

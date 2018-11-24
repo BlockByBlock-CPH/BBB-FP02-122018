@@ -17,6 +17,7 @@ namespace BBBWebApiCodeFirst.Models
         [ForeignKey("Mtc")]
         public int ZoneAct { get; set; }
         
+        //public int CountAct { get; set; }
         public long CountAct { get; set; }
         public int HoursAct { get; set; }
 

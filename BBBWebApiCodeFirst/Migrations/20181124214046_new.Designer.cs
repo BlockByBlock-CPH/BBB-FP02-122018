@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BBBWebApiCodeFirst.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20181112234127_new")]
+    [Migration("20181124214046_new")]
     partial class @new
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
