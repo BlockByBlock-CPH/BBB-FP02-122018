@@ -58,10 +58,9 @@ namespace BBBWebApiCodeFirst.Controllers
             {
                 return BadRequest(ModelState);
             }
-
-            // var mtc = await _context.Mtcs.FindAsync(id);
-
+                        
             var mtc = await _context.Mtcs.FindAsync(id);
+
             var mtcArea = mtc.Area;
 
             if (mtcArea == null)
@@ -127,6 +126,7 @@ namespace BBBWebApiCodeFirst.Controllers
 
             return NoContent();
         }
+
 
         // POST: api/Mtcs
         [HttpPost]
