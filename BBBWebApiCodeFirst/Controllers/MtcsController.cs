@@ -71,6 +71,13 @@ namespace BBBWebApiCodeFirst.Controllers
             return Ok(mtcArea);
         }
 
+        //GET:api/Mtcs/gettopchart2
+        [HttpGet("gettopchart2")]
+
+        //public IEnumerable<Mtc> GetTopChart2()
+        //{
+        //    string _selectString = "";
+        //}
 
         // GET: api/Mtcs/gettophour
         //[HttpGet("gettophour")]
