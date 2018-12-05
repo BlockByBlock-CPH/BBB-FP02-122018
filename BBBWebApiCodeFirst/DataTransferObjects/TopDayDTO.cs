@@ -8,9 +8,13 @@ using System.Threading.Tasks;
 
 namespace BBBWebApiCodeFirst.DataTransferObjects
 {
-    public class TopDTO
+    public class TopDayDTO
     {
         public int Id { get; set; }
+
+        public int DaysAct { get; set; }
+
+        public string NameDay { get; set; }
 
         public int ZoneAct { get; set; }
 

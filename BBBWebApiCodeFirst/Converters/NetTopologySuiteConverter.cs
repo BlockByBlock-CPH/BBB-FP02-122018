@@ -24,7 +24,7 @@ namespace BBBWebApiCodeFirst.Converters
             {
 
                 var srid = obj["srid"].Value<int>();
-                var wkt = obj["wellKnownText"].Value<string>();
+                var wkt = obj["wkt"].Value<string>();
 
                 try
                 {
@@ -57,7 +57,7 @@ namespace BBBWebApiCodeFirst.Converters
 
             var obj = new JObject();
 
-            obj.Add("wellKnownText", geom.ToText());
+            obj.Add("wkt", geom.ToText());
             obj.Add("srid", geom.SRID);
 
             serializer.Serialize(writer, obj);
