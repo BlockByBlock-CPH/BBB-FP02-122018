@@ -19,7 +19,6 @@ namespace BBBWebApiCodeFirst.Controllers
     [ApiController]
     public class MainChartController : ControllerBase
     {
-
         private readonly DataContext _context;
         string connectionString = ConnectionStringBuilder.buildConnectionString();
 
@@ -44,6 +43,8 @@ namespace BBBWebApiCodeFirst.Controllers
                     using (var reader = cmd.ExecuteReader())
                     {
                         List<MainChartDTO> mainChartDtoList = new List<MainChartDTO>();
+                        GenericReader genericReader = new GenericReader();
+
 
                         while (reader.Read())
                         {
