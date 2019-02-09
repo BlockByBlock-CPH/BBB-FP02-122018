@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BBBWebApiCodeFirst.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190206205147_newdbwithforeignkeys2")]
-    partial class newdbwithforeignkeys2
+    [Migration("20190207104325_firstmigration")]
+    partial class firstmigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,7 +32,7 @@ namespace BBBWebApiCodeFirst.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Age");
+                    b.ToTable("Ages");
                 });
 
             modelBuilder.Entity("BBBWebApiCodeFirst.Models.Day", b =>
@@ -44,7 +44,7 @@ namespace BBBWebApiCodeFirst.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Dayss");
+                    b.ToTable("Days");
                 });
 
             modelBuilder.Entity("BBBWebApiCodeFirst.Models.Gender", b =>
@@ -56,7 +56,7 @@ namespace BBBWebApiCodeFirst.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Gender");
+                    b.ToTable("Genders");
                 });
 
             modelBuilder.Entity("BBBWebApiCodeFirst.Models.Mtc", b =>

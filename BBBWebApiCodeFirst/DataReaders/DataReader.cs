@@ -1,4 +1,4 @@
-﻿using BBBWebApiCodeFirst.DataTransferObjects;
+﻿ using BBBWebApiCodeFirst.DataTransferObjects;
 using BBBWebApiCodeFirst.Interfaces;
 using BBBWebApiCodeFirst.Models;
 using NetTopologySuite.Geometries;
@@ -48,26 +48,20 @@ namespace BBBWebApiCodeFirst.DataReaders
             var obj = new JObject();
 
             int id = reader.GetInt32(0);
-            int gid = reader.GetInt32(1);
-            double area = reader.GetDouble(2);
-            int zoneAct = reader.GetInt32(3);
-            int IdDay = reader.GetInt32(4);
-            string nameDay = reader.GetString(5);
-            int hoursAct = reader.GetInt32(6);
-            int people = reader.GetInt32(7);
-            Geometry geom = reader.GetValue(8) as NetTopologySuite.Geometries.Geometry;
-
+            string description = reader.GetString(1);
+            int hour = reader.GetInt32(2);
+            int people = reader.GetInt32(3);
+            decimal density = reader.GetDecimal(4);
+                        
             MainChartDTO mainChartDTO = new MainChartDTO
             {
                 Id = id,
-                Gid = gid,
-                Area = area,
-                ZoneAct = zoneAct,
-                NameDay = nameDay,
-                HoursAct = hoursAct,
+                Description = description,
+                Hour = hour,
                 People = people,
-                Geom = geom
+                Density = density
             };
+
             return mainChartDTO;
         }
 
@@ -91,25 +85,17 @@ namespace BBBWebApiCodeFirst.DataReaders
 
         public TableHomeDayDTO ReadTableHomeDayDTO (NpgsqlDataReader reader)
         {
-            int gid = reader.GetInt32(0);
-            int id = reader.GetInt32(1);
-            int zoneAct = reader.GetInt32(2);
-            int daysAct = reader.GetInt32(3);
-            string nameDay = reader.GetString(4);
-            int hoursAct = reader.GetInt32(5);
-            long countAct = reader.GetInt64(6);
-            Geometry geom = reader.GetValue(3) as NetTopologySuite.Geometries.Geometry;
+            int id = reader.GetInt32(0);
+            string description = reader.GetString(1);
+            int hour = reader.GetInt32(2);
+            int people = reader.GetInt32(3);
 
             TableHomeDayDTO tableHomeDayDTO = new TableHomeDayDTO
             {
-                Gid = gid,
                 Id = id,
-                ZoneAct = zoneAct,
-                DaysAct = daysAct,
-                NameDay = nameDay,
-                HoursAct = hoursAct,
-                CountAct = countAct,
-                Geom = geom
+                Description = description,
+                Hour = hour,
+                People = people                
             };
 
             return tableHomeDayDTO;
@@ -117,23 +103,15 @@ namespace BBBWebApiCodeFirst.DataReaders
 
         public TableHomeWeekDTO ReadTableHomeWeekDTO(NpgsqlDataReader reader)
         {
-            int gid = reader.GetInt32(0);
-            int id = reader.GetInt32(1);
-            int zoneAct = reader.GetInt32(2);
-            int daysAct = reader.GetInt32(3);
-            string nameDay = reader.GetString(4);
-            long people = reader.GetInt64(5);
-            Geometry geom = reader.GetValue(6) as NetTopologySuite.Geometries.Geometry;
-
+            int id = reader.GetInt32(0);
+            string description = reader.GetString(1);
+            int people = reader.GetInt32(2);            
+            
             TableHomeWeekDTO tableHomeWeekDTO = new TableHomeWeekDTO
-            {
-                Gid = gid,
+            {                
                 Id = id,
-                ZoneAct = zoneAct,
-                DaysAct = daysAct,
-                NameDay = nameDay,
-                People = people,
-                Geom = geom
+                Description = description,
+                People = people                
             };
 
             return tableHomeWeekDTO;
@@ -147,8 +125,7 @@ namespace BBBWebApiCodeFirst.DataReaders
             {
                 Area = area
             };
-            return areaOfInfluenceDTO;
-            
+            return areaOfInfluenceDTO;            
             
         }
     }

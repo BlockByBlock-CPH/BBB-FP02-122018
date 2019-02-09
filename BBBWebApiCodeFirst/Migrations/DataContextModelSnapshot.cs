@@ -30,7 +30,7 @@ namespace BBBWebApiCodeFirst.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Age");
+                    b.ToTable("Ages");
                 });
 
             modelBuilder.Entity("BBBWebApiCodeFirst.Models.Day", b =>
@@ -42,7 +42,7 @@ namespace BBBWebApiCodeFirst.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Dayss");
+                    b.ToTable("Days");
                 });
 
             modelBuilder.Entity("BBBWebApiCodeFirst.Models.Gender", b =>
@@ -54,7 +54,7 @@ namespace BBBWebApiCodeFirst.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Gender");
+                    b.ToTable("Genders");
                 });
 
             modelBuilder.Entity("BBBWebApiCodeFirst.Models.Mtc", b =>

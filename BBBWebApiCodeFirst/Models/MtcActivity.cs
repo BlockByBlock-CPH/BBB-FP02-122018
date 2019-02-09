@@ -14,8 +14,7 @@ namespace BBBWebApiCodeFirst.Models
 
         public long zone { get; set; }
         [ForeignKey("zone")]
-        public Mtc Mtc { get; set; }
-        
+        public Mtc Mtc { get; set; }        
 
         public int day { get; set; }
         [ForeignKey("day")]

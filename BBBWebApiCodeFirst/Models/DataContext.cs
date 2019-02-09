@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace BBBWebApiCodeFirst.Models
 {
-    public class DataContext: DbContext
+    public class DataContext : DbContext
     {
-        public DataContext (DbContextOptions<DataContext> options): base(options)
+        public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
 
-        }      
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -26,7 +26,7 @@ namespace BBBWebApiCodeFirst.Models
                    .Build();
 
                 var connectionString = configuration.GetConnectionString("BbbApiConnection");
-              
+
                 optionsBuilder.UseNpgsql(connectionString);
             }
         }
@@ -36,16 +36,22 @@ namespace BBBWebApiCodeFirst.Models
             builder.HasPostgresExtension("postgis");
         }
 
+
+        public DbSet<Age> Ages { get; set; }
+
+        public DbSet<Day> Days { get; set; }
+
+        public DbSet<Gender> Genders {get; set;}
+
         public DbSet<Mtc> Mtcs { get; set; }
 
         public DbSet<MtcActivity> MtcActivitys { get; set; }
 
-        public DbSet<MtcHomezone> MtcHomezones { get; set; }
-
-        public DbSet<Day> Dayss { get; set; }
+        public DbSet<MtcAge> MtcAges { get; set; }
 
         public DbSet<MtcGender> MtcGenders { get; set; }
 
-        public DbSet<MtcAge> MtcAges { get; set; }
+        public DbSet<MtcHomezone> MtcHomezones { get; set; }       
+
     }
 }

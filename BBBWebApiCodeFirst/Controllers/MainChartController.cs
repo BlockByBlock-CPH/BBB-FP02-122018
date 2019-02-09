@@ -19,7 +19,6 @@ namespace BBBWebApiCodeFirst.Controllers
     [ApiController]
     public class MainChartController : ControllerBase
     {
-
         private readonly DataContext _context;
         string connectionString = ConnectionStringBuilder.buildConnectionString();
 
@@ -32,8 +31,8 @@ namespace BBBWebApiCodeFirst.Controllers
         [HttpGet("getmainchartday/{day}/{longy}/{lat}")]
         public JObject GetMainChartDay([FromRoute] int day, double longy, double lat)
         {
-            string _pointString = "POINT(" + longy + " " + lat + ")";
-            string _selectString = "SELECT c.\"Id\", c.\"Gid\", c.\"Area\", a.\"ZoneAct\", b.\"IdDay\", b.\"NameDay\", a.\"HoursAct\", SUM(a.\"CountAct\") AS People, c.\"Geom\" FROM \"MtcActivitys\" a INNER JOIN \"Days\" b ON a.\"DaysAct\" = b.\"IdDay\" INNER JOIN \"Mtcs\" c ON a.\"ZoneAct\" = c.\"Gid\" Where ST_Contains(c.\"Geom\", ST_GeomFromText('" + _pointString + "', 4326))=true AND a.\"DaysAct\" = " + day + " GROUP BY c.\"Id\", c.\"Gid\", a.\"ZoneAct\", b.\"IdDay\", b.\"NameDay\", a.\"HoursAct\", c.\"Geom\" ORDER BY a.\"HoursAct\" ASC";
+
+            string _selectString = "SELECT day.id, day.description, act.hour, act.people, act.density FROM \"MtcActivitys\" AS act INNER JOIN day AS day ON act.day = day.id INNER JOIN \"Mtcs\" AS zone ON act.zone = zone.id WHERE ST_Contains(zone.geom, ST_SetSRID(ST_MakePoint(" + longy + "," + lat + "), 4326)) AND act.day = "+day+" ORDER BY act.hour ASC";
                        
             using (var conn = new NpgsqlConnection(connectionString))
             {
@@ -66,35 +65,33 @@ namespace BBBWebApiCodeFirst.Controllers
         [HttpGet("getmainchartweek/{longy}/{lat}")]
        
             public JObject GetMainChartWeek([FromRoute] double longy, double lat)
-            {
-            string _pointString = "POINT(" + longy + " " + lat + ")";
-
-            string _selectString = "SELECT c.\"Id\", c.\"Gid\", c.\"Area\", a.\"ZoneAct\", b.\"IdDay\", b.\"NameDay\", a.\"HoursAct\", SUM(a.\"CountAct\") AS People, c.\"Geom\" FROM \"MtcActivitys\" a INNER JOIN \"Dayss\" b ON a.\"DaysAct\" = b.\"IdDay\" INNER JOIN \"Mtcs\" c ON a.\"ZoneAct\" = c.\"Gid\" Where ST_Contains(c.\"Geom\", ST_GeomFromText('" + _pointString + "', 4326))=true GROUP BY c.\"Id\", c.\"Gid\", a.\"ZoneAct\", b.\"IdDay\", b.\"NameDay\", a.\"HoursAct\", c.\"Geom\" ORDER BY a.\"HoursAct\" ASC";
-
-            using (var conn = new NpgsqlConnection(connectionString))
-            {
-                conn.Open();
-
-                using (var cmd = new NpgsqlCommand(_selectString, conn))
+            {        
+                string _selectString = "SELECT day.id, day.description, act.hour, act.people, act.density FROM \"MtcActivity\" AS act INNER JOIN day AS day ON act.day = day.id INNER JOIN \"Mtcs\" AS zone ON act.zone = zone.id WHERE ST_Contains(zone.geom, ST_SetSRID(ST_MakePoint(" + longy + "," + lat + "), 4326)) ORDER BY act.day, act.hour ASC";
+            
+                using (var conn = new NpgsqlConnection(connectionString))
                 {
-                    using (var reader = cmd.ExecuteReader())
+                    conn.Open();
+
+                    using (var cmd = new NpgsqlCommand(_selectString, conn))
                     {
-                        List<MainChartDTO> mainChartDtoList = new List<MainChartDTO>();
-
-                        while (reader.Read())
+                        using (var reader = cmd.ExecuteReader())
                         {
-                            InterfaceDataReader dataReader = new DataReader();
-                            MainChartDTO mainChartDTO = dataReader.ReadMainChartDTO(reader);
-                            mainChartDtoList.Add(mainChartDTO);
-                        }
+                            List<MainChartDTO> mainChartDtoList = new List<MainChartDTO>();
 
-                        IObjectConverter objConverted = new ObjectConverter();                        
-                        var obj = objConverted.MainChartWeekJson(mainChartDtoList);
+                            while (reader.Read())
+                            {
+                                InterfaceDataReader dataReader = new DataReader();
+                                MainChartDTO mainChartDTO = dataReader.ReadMainChartDTO(reader);
+                                mainChartDtoList.Add(mainChartDTO);
+                            }
+
+                            IObjectConverter objConverted = new ObjectConverter();                        
+                            var obj = objConverted.MainChartWeekJson(mainChartDtoList);
                         
-                        return obj;                        
+                            return obj;                        
+                        }
                     }
                 }
-            }
         }       
     }
 }
