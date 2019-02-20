@@ -21,5 +21,7 @@ namespace BBBWebApiCodeFirst.Interfaces
 
         AreaOfInfluenceDTO ReadAreaOfInfluenceDTO(NpgsqlDataReader reader);
 
+        HomeZoneWheelDTO ReadHomeZoneWheelDTO(NpgsqlDataReader reader)
+
     }
 }

@@ -54,7 +54,6 @@ namespace BBBWebApiCodeFirst.Controllers
                     }
                 }
             }
-
             return new JObject();
         }
 

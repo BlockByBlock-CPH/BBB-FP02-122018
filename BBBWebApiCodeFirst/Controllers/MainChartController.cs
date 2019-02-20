@@ -32,7 +32,7 @@ namespace BBBWebApiCodeFirst.Controllers
         public JObject GetMainChartDay([FromRoute] int day, double longy, double lat)
         {
 
-            string _selectString = "SELECT day.id, day.description, act.hour, act.people, act.density FROM \"MtcActivitys\" AS act INNER JOIN day AS day ON act.day = day.id INNER JOIN \"Mtcs\" AS zone ON act.zone = zone.id WHERE ST_Contains(zone.geom, ST_SetSRID(ST_MakePoint(" + longy + "," + lat + "), 4326)) AND act.day = "+day+" ORDER BY act.hour ASC";
+            string _selectString = "SELECT day.id, day.description, act.hour, act.people, act.density FROM \"MtcActivitys\" AS act INNER JOIN \"Days\" AS day ON act.day = day.id INNER JOIN \"Mtcs\" AS zone ON act.zone = zone.id WHERE ST_Contains(zone.geom, ST_SetSRID(ST_MakePoint(" + longy + "," + lat + "), 4326)) AND act.day = "+day+" ORDER BY act.hour ASC";
                        
             using (var conn = new NpgsqlConnection(connectionString))
             {
@@ -66,7 +66,7 @@ namespace BBBWebApiCodeFirst.Controllers
        
             public JObject GetMainChartWeek([FromRoute] double longy, double lat)
             {        
-                string _selectString = "SELECT day.id, day.description, act.hour, act.people, act.density FROM \"MtcActivity\" AS act INNER JOIN day AS day ON act.day = day.id INNER JOIN \"Mtcs\" AS zone ON act.zone = zone.id WHERE ST_Contains(zone.geom, ST_SetSRID(ST_MakePoint(" + longy + "," + lat + "), 4326)) ORDER BY act.day, act.hour ASC";
+                string _selectString = "SELECT day.id, day.description, act.hour, act.people, act.density FROM \"MtcActivitys\" AS act INNER JOIN \"Days\" AS day ON act.day = day.id INNER JOIN \"Mtcs\" AS zone ON act.zone = zone.id WHERE ST_Contains(zone.geom, ST_SetSRID(ST_MakePoint(" + longy + "," + lat + "), 4326)) ORDER BY act.day, act.hour ASC";
             
                 using (var conn = new NpgsqlConnection(connectionString))
                 {

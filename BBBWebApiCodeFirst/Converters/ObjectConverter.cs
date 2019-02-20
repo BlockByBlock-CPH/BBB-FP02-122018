@@ -32,103 +32,103 @@ namespace BBBWebApiCodeFirst.Converters
         public JObject HourlyPeopleJson(List<MainChartDTO> list)
         {
             var obj = new JObject();
-            var series = new JObject();            
+            var series = new JObject();
 
             foreach (var item in list)
             {
-                if (item.HoursAct == 0)
+                if (item.Hour == 0)
                 {
                     obj.Add("0", item.People);
                 }
-                if (item.HoursAct == 1)
+                if (item.Hour == 1)
                 {
                     obj.Add("1", item.People);
                 }
-                if (item.HoursAct == 2)
+                if (item.Hour == 2)
                 {
                     obj.Add("2", item.People);
                 }
-                if (item.HoursAct == 3)
+                if (item.Hour == 3)
                 {
                     obj.Add("3", item.People);
                 }
-                if (item.HoursAct == 4)
+                if (item.Hour == 4)
                 {
                     obj.Add("4", item.People);
                 }
-                if (item.HoursAct == 5)
+                if (item.Hour == 5)
                 {
                     obj.Add("5", item.People);
                 }
-                if (item.HoursAct == 6)
+                if (item.Hour == 6)
                 {
                     obj.Add("6", item.People);
                 }
-                if (item.HoursAct == 7)
+                if (item.Hour == 7)
                 {
                     obj.Add("7", item.People);
                 }
-                if (item.HoursAct == 8)
+                if (item.Hour == 8)
                 {
                     obj.Add("8", item.People);
                 }
-                if (item.HoursAct == 9)
+                if (item.Hour == 9)
                 {
                     obj.Add("9", item.People);
                 }
-                if (item.HoursAct == 10)
+                if (item.Hour == 10)
                 {
                     obj.Add("10", item.People);
                 }
-                if (item.HoursAct == 11)
+                if (item.Hour == 11)
                 {
                     obj.Add("11", item.People);
                 }
-                if (item.HoursAct == 12)
+                if (item.Hour == 12)
                 {
                     obj.Add("12", item.People);
                 }
-                if (item.HoursAct == 13)
+                if (item.Hour == 13)
                 {
                     obj.Add("13", item.People);
                 }
-                if (item.HoursAct == 14)
+                if (item.Hour == 14)
                 {
                     obj.Add("14", item.People);
                 }
-                if (item.HoursAct == 15)
+                if (item.Hour == 15)
                 {
                     obj.Add("15", item.People);
                 }
-                if (item.HoursAct == 16)
+                if (item.Hour == 16)
                 {
                     obj.Add("16", item.People);
                 }
-                if (item.HoursAct == 17)
+                if (item.Hour == 17)
                 {
                     obj.Add("17", item.People);
                 }
-                if (item.HoursAct == 18)
+                if (item.Hour == 18)
                 {
                     obj.Add("18", item.People);
                 }
-                if (item.HoursAct == 19)
+                if (item.Hour == 19)
                 {
                     obj.Add("19", item.People);
                 }
-                if (item.HoursAct == 20)
+                if (item.Hour == 20)
                 {
                     obj.Add("20", item.People);
                 }
-                if (item.HoursAct == 21)
+                if (item.Hour == 21)
                 {
                     obj.Add("21", item.People);
                 }
-                if (item.HoursAct == 22)
+                if (item.Hour == 22)
                 {
                     obj.Add("22", item.People);
                 }
-                if (item.HoursAct == 23)
+                if (item.Hour == 23)
                 {
                     obj.Add("23", item.People);
                 }
@@ -157,12 +157,12 @@ namespace BBBWebApiCodeFirst.Converters
             var obj = new JObject();
 
             foreach (var item in list)
-            {                
-                obj.Add("0", item.NameDay);                
+            {
+                obj.Add("0", item.Day);
                 break;
             }
 
-            return obj ;
+            return obj;
         }
 
         public JObject MainChartWeekJson (List<MainChartDTO> list)
@@ -194,745 +194,746 @@ namespace BBBWebApiCodeFirst.Converters
 
             foreach (var item in list)
             {
-                if (item.HoursAct == 0 )
-                {           
-                    if (item.NameDay == "MON") {
+                if (item.Hour == 0)
+                {
+                    if (item.Day == "MON")
+                    {
                         serie0.Add("0", item.People);
                     }
-                    if (item.NameDay == "TUE")
+                    if (item.Day == "TUE")
                     {
                         serie0.Add("1", item.People);
                     }
-                    if (item.NameDay == "WED")
+                    if (item.Day == "WED")
                     {
                         serie0.Add("2", item.People);
                     }
-                    if (item.NameDay == "THU")
+                    if (item.Day == "THU")
                     {
                         serie0.Add("3", item.People);
                     }
-                    if (item.NameDay == "FRI")
+                    if (item.Day == "FRI")
                     {
                         serie0.Add("4", item.People);
                     }
-                    if (item.NameDay == "SAT")
+                    if (item.Day == "SAT")
                     {
                         serie0.Add("5", item.People);
                     }
-                    if (item.NameDay == "SUN")
+                    if (item.Day == "SUN")
                     {
                         serie0.Add("6", item.People);
                     }
                 }
-                if (item.HoursAct == 1)
+                if (item.Hour == 1)
                 {
-                    if (item.NameDay == "MON")
+                    if (item.Day == "MON")
                     {
                         serie1.Add("0", item.People);
                     }
-                    if (item.NameDay == "TUE")
+                    if (item.Day == "TUE")
                     {
                         serie1.Add("1", item.People);
                     }
-                    if (item.NameDay == "WED")
+                    if (item.Day == "WED")
                     {
                         serie1.Add("2", item.People);
                     }
-                    if (item.NameDay == "THU")
+                    if (item.Day == "THU")
                     {
                         serie1.Add("3", item.People);
                     }
-                    if (item.NameDay == "FRI")
+                    if (item.Day == "FRI")
                     {
                         serie1.Add("4", item.People);
                     }
-                    if (item.NameDay == "SAT")
+                    if (item.Day == "SAT")
                     {
                         serie1.Add("5", item.People);
                     }
-                    if (item.NameDay == "SUN")
+                    if (item.Day == "SUN")
                     {
                         serie1.Add("6", item.People);
                     }
                 }
-                if (item.HoursAct == 2)
+                if (item.Hour == 2)
                 {
-                    if (item.NameDay == "MON")
+                    if (item.Day == "MON")
                     {
                         serie2.Add("0", item.People);
                     }
-                    if (item.NameDay == "TUE")
+                    if (item.Day == "TUE")
                     {
                         serie2.Add("1", item.People);
                     }
-                    if (item.NameDay == "WED")
+                    if (item.Day == "WED")
                     {
                         serie2.Add("2", item.People);
                     }
-                    if (item.NameDay == "THU")
+                    if (item.Day == "THU")
                     {
                         serie2.Add("3", item.People);
                     }
-                    if (item.NameDay == "FRI")
+                    if (item.Day == "FRI")
                     {
                         serie2.Add("4", item.People);
                     }
-                    if (item.NameDay == "SAT")
+                    if (item.Day == "SAT")
                     {
                         serie2.Add("5", item.People);
                     }
-                    if (item.NameDay == "SUN")
+                    if (item.Day == "SUN")
                     {
                         serie2.Add("6", item.People);
                     }
                 }
-                if (item.HoursAct == 3)
+                if (item.Hour == 3)
                 {
-                    if (item.NameDay == "MON")
+                    if (item.Day == "MON")
                     {
                         serie3.Add("0", item.People);
                     }
-                    if (item.NameDay == "TUE")
+                    if (item.Day == "TUE")
                     {
                         serie3.Add("1", item.People);
                     }
-                    if (item.NameDay == "WED")
+                    if (item.Day == "WED")
                     {
                         serie3.Add("2", item.People);
                     }
-                    if (item.NameDay == "THU")
+                    if (item.Day == "THU")
                     {
                         serie3.Add("3", item.People);
                     }
-                    if (item.NameDay == "FRI")
+                    if (item.Day == "FRI")
                     {
                         serie3.Add("4", item.People);
                     }
-                    if (item.NameDay == "SAT")
+                    if (item.Day == "SAT")
                     {
                         serie3.Add("5", item.People);
                     }
-                    if (item.NameDay == "SUN")
+                    if (item.Day == "SUN")
                     {
                         serie3.Add("6", item.People);
                     }
                 }
-                if (item.HoursAct == 4)
+                if (item.Hour == 4)
                 {
-                    if (item.NameDay == "MON")
+                    if (item.Day == "MON")
                     {
                         serie4.Add("0", item.People);
                     }
-                    if (item.NameDay == "TUE")
+                    if (item.Day == "TUE")
                     {
                         serie4.Add("1", item.People);
                     }
-                    if (item.NameDay == "WED")
+                    if (item.Day == "WED")
                     {
                         serie4.Add("2", item.People);
                     }
-                    if (item.NameDay == "THU")
+                    if (item.Day == "THU")
                     {
                         serie4.Add("3", item.People);
                     }
-                    if (item.NameDay == "FRI")
+                    if (item.Day == "FRI")
                     {
                         serie4.Add("4", item.People);
                     }
-                    if (item.NameDay == "SAT")
+                    if (item.Day == "SAT")
                     {
                         serie4.Add("5", item.People);
                     }
-                    if (item.NameDay == "SUN")
+                    if (item.Day == "SUN")
                     {
                         serie4.Add("6", item.People);
                     }
                 }
-                if (item.HoursAct == 5)
+                if (item.Hour == 5)
                 {
-                    if (item.NameDay == "MON")
+                    if (item.Day == "MON")
                     {
                         serie5.Add("0", item.People);
                     }
-                    if (item.NameDay == "TUE")
+                    if (item.Day == "TUE")
                     {
                         serie5.Add("1", item.People);
                     }
-                    if (item.NameDay == "WED")
+                    if (item.Day == "WED")
                     {
                         serie5.Add("2", item.People);
                     }
-                    if (item.NameDay == "THU")
+                    if (item.Day == "THU")
                     {
                         serie5.Add("3", item.People);
                     }
-                    if (item.NameDay == "FRI")
+                    if (item.Day == "FRI")
                     {
                         serie5.Add("4", item.People);
                     }
-                    if (item.NameDay == "SAT")
+                    if (item.Day == "SAT")
                     {
                         serie5.Add("5", item.People);
                     }
-                    if (item.NameDay == "SUN")
+                    if (item.Day == "SUN")
                     {
                         serie5.Add("6", item.People);
                     }
                 }
-                if (item.HoursAct == 6)
+                if (item.Hour == 6)
                 {
-                    if (item.NameDay == "MON")
+                    if (item.Day == "MON")
                     {
                         serie6.Add("0", item.People);
                     }
-                    if (item.NameDay == "TUE")
+                    if (item.Day == "TUE")
                     {
                         serie6.Add("1", item.People);
                     }
-                    if (item.NameDay == "WED")
+                    if (item.Day == "WED")
                     {
                         serie6.Add("2", item.People);
                     }
-                    if (item.NameDay == "THU")
+                    if (item.Day == "THU")
                     {
                         serie6.Add("3", item.People);
                     }
-                    if (item.NameDay == "FRI")
+                    if (item.Day == "FRI")
                     {
                         serie6.Add("4", item.People);
                     }
-                    if (item.NameDay == "SAT")
+                    if (item.Day == "SAT")
                     {
                         serie6.Add("5", item.People);
                     }
-                    if (item.NameDay == "SUN")
+                    if (item.Day == "SUN")
                     {
                         serie6.Add("6", item.People);
                     }
                 }
-                if (item.HoursAct == 7)
+                if (item.Hour == 7)
                 {
-                    if (item.NameDay == "MON")
+                    if (item.Day == "MON")
                     {
                         serie7.Add("0", item.People);
                     }
-                    if (item.NameDay == "TUE")
+                    if (item.Day == "TUE")
                     {
                         serie7.Add("1", item.People);
                     }
-                    if (item.NameDay == "WED")
+                    if (item.Day == "WED")
                     {
                         serie7.Add("2", item.People);
                     }
-                    if (item.NameDay == "THU")
+                    if (item.Day == "THU")
                     {
                         serie7.Add("3", item.People);
                     }
-                    if (item.NameDay == "FRI")
+                    if (item.Day == "FRI")
                     {
                         serie7.Add("4", item.People);
                     }
-                    if (item.NameDay == "SAT")
+                    if (item.Day == "SAT")
                     {
                         serie7.Add("5", item.People);
                     }
-                    if (item.NameDay == "SUN")
+                    if (item.Day == "SUN")
                     {
                         serie7.Add("6", item.People);
                     }
                 }
-                if (item.HoursAct == 8)
+                if (item.Hour == 8)
                 {
-                    if (item.NameDay == "MON")
+                    if (item.Day == "MON")
                     {
                         serie8.Add("0", item.People);
                     }
-                    if (item.NameDay == "TUE")
+                    if (item.Day == "TUE")
                     {
                         serie8.Add("1", item.People);
                     }
-                    if (item.NameDay == "WED")
+                    if (item.Day == "WED")
                     {
                         serie8.Add("2", item.People);
                     }
-                    if (item.NameDay == "THU")
+                    if (item.Day == "THU")
                     {
                         serie8.Add("3", item.People);
                     }
-                    if (item.NameDay == "FRI")
+                    if (item.Day == "FRI")
                     {
                         serie8.Add("4", item.People);
                     }
-                    if (item.NameDay == "SAT")
+                    if (item.Day == "SAT")
                     {
                         serie8.Add("5", item.People);
                     }
-                    if (item.NameDay == "SUN")
+                    if (item.Day == "SUN")
                     {
                         serie8.Add("6", item.People);
                     }
                 }
-                if (item.HoursAct == 9)
+                if (item.Hour == 9)
                 {
-                    if (item.NameDay == "MON")
+                    if (item.Day == "MON")
                     {
                         serie9.Add("0", item.People);
                     }
-                    if (item.NameDay == "TUE")
+                    if (item.Day == "TUE")
                     {
                         serie9.Add("1", item.People);
                     }
-                    if (item.NameDay == "WED")
+                    if (item.Day == "WED")
                     {
                         serie9.Add("2", item.People);
                     }
-                    if (item.NameDay == "THU")
+                    if (item.Day == "THU")
                     {
                         serie9.Add("3", item.People);
                     }
-                    if (item.NameDay == "FRI")
+                    if (item.Day == "FRI")
                     {
                         serie9.Add("4", item.People);
                     }
-                    if (item.NameDay == "SAT")
+                    if (item.Day == "SAT")
                     {
                         serie9.Add("5", item.People);
                     }
-                    if (item.NameDay == "SUN")
+                    if (item.Day == "SUN")
                     {
                         serie9.Add("6", item.People);
                     }
                 }
-                if (item.HoursAct == 10)
+                if (item.Hour == 10)
                 {
-                    if (item.NameDay == "MON")
+                    if (item.Day == "MON")
                     {
                         serie10.Add("0", item.People);
                     }
-                    if (item.NameDay == "TUE")
+                    if (item.Day == "TUE")
                     {
                         serie10.Add("1", item.People);
                     }
-                    if (item.NameDay == "WED")
+                    if (item.Day == "WED")
                     {
                         serie10.Add("2", item.People);
                     }
-                    if (item.NameDay == "THU")
+                    if (item.Day == "THU")
                     {
                         serie10.Add("3", item.People);
                     }
-                    if (item.NameDay == "FRI")
+                    if (item.Day == "FRI")
                     {
                         serie10.Add("4", item.People);
                     }
-                    if (item.NameDay == "SAT")
+                    if (item.Day == "SAT")
                     {
                         serie10.Add("5", item.People);
                     }
-                    if (item.NameDay == "SUN")
+                    if (item.Day == "SUN")
                     {
                         serie10.Add("6", item.People);
                     }
                 }
-                if (item.HoursAct == 11)
+                if (item.Hour == 11)
                 {
-                    if (item.NameDay == "MON")
+                    if (item.Day == "MON")
                     {
                         serie11.Add("0", item.People);
                     }
-                    if (item.NameDay == "TUE")
+                    if (item.Day == "TUE")
                     {
                         serie11.Add("1", item.People);
                     }
-                    if (item.NameDay == "WED")
+                    if (item.Day == "WED")
                     {
                         serie11.Add("2", item.People);
                     }
-                    if (item.NameDay == "THU")
+                    if (item.Day == "THU")
                     {
                         serie11.Add("3", item.People);
                     }
-                    if (item.NameDay == "FRI")
+                    if (item.Day == "FRI")
                     {
                         serie11.Add("4", item.People);
                     }
-                    if (item.NameDay == "SAT")
+                    if (item.Day == "SAT")
                     {
                         serie11.Add("5", item.People);
                     }
-                    if (item.NameDay == "SUN")
+                    if (item.Day == "SUN")
                     {
                         serie11.Add("6", item.People);
                     }
                 }
-                if (item.HoursAct == 12)
+                if (item.Hour == 12)
                 {
-                    if (item.NameDay == "MON")
+                    if (item.Day == "MON")
                     {
                         serie12.Add("0", item.People);
                     }
-                    if (item.NameDay == "TUE")
+                    if (item.Day == "TUE")
                     {
                         serie12.Add("1", item.People);
                     }
-                    if (item.NameDay == "WED")
+                    if (item.Day == "WED")
                     {
                         serie12.Add("2", item.People);
                     }
-                    if (item.NameDay == "THU")
+                    if (item.Day == "THU")
                     {
                         serie12.Add("3", item.People);
                     }
-                    if (item.NameDay == "FRI")
+                    if (item.Day == "FRI")
                     {
                         serie12.Add("4", item.People);
                     }
-                    if (item.NameDay == "SAT")
+                    if (item.Day == "SAT")
                     {
                         serie12.Add("5", item.People);
                     }
-                    if (item.NameDay == "SUN")
+                    if (item.Day == "SUN")
                     {
                         serie12.Add("6", item.People);
                     }
                 }
-                if (item.HoursAct == 13)
+                if (item.Hour == 13)
                 {
-                    if (item.NameDay == "MON")
+                    if (item.Day == "MON")
                     {
                         serie13.Add("0", item.People);
                     }
-                    if (item.NameDay == "TUE")
+                    if (item.Day == "TUE")
                     {
                         serie13.Add("1", item.People);
                     }
-                    if (item.NameDay == "WED")
+                    if (item.Day == "WED")
                     {
                         serie13.Add("2", item.People);
                     }
-                    if (item.NameDay == "THU")
+                    if (item.Day == "THU")
                     {
                         serie13.Add("3", item.People);
                     }
-                    if (item.NameDay == "FRI")
+                    if (item.Day == "FRI")
                     {
                         serie13.Add("4", item.People);
                     }
-                    if (item.NameDay == "SAT")
+                    if (item.Day == "SAT")
                     {
                         serie13.Add("5", item.People);
                     }
-                    if (item.NameDay == "SUN")
+                    if (item.Day == "SUN")
                     {
                         serie13.Add("6", item.People);
                     }
                 }
-                if (item.HoursAct == 14)
+                if (item.Hour == 14)
                 {
-                    if (item.NameDay == "MON")
+                    if (item.Day == "MON")
                     {
                         serie14.Add("0", item.People);
                     }
-                    if (item.NameDay == "TUE")
+                    if (item.Day == "TUE")
                     {
                         serie14.Add("1", item.People);
                     }
-                    if (item.NameDay == "WED")
+                    if (item.Day == "WED")
                     {
                         serie14.Add("2", item.People);
                     }
-                    if (item.NameDay == "THU")
+                    if (item.Day == "THU")
                     {
                         serie14.Add("3", item.People);
                     }
-                    if (item.NameDay == "FRI")
+                    if (item.Day == "FRI")
                     {
                         serie14.Add("4", item.People);
                     }
-                    if (item.NameDay == "SAT")
+                    if (item.Day == "SAT")
                     {
                         serie14.Add("5", item.People);
                     }
-                    if (item.NameDay == "SUN")
+                    if (item.Day == "SUN")
                     {
                         serie14.Add("6", item.People);
                     }
                 }
-                if (item.HoursAct == 15)
+                if (item.Hour == 15)
                 {
-                    if (item.NameDay == "MON")
+                    if (item.Day == "MON")
                     {
                         serie15.Add("0", item.People);
                     }
-                    if (item.NameDay == "TUE")
+                    if (item.Day == "TUE")
                     {
                         serie15.Add("1", item.People);
                     }
-                    if (item.NameDay == "WED")
+                    if (item.Day == "WED")
                     {
                         serie15.Add("2", item.People);
                     }
-                    if (item.NameDay == "THU")
+                    if (item.Day == "THU")
                     {
                         serie15.Add("3", item.People);
                     }
-                    if (item.NameDay == "FRI")
+                    if (item.Day == "FRI")
                     {
                         serie15.Add("4", item.People);
                     }
-                    if (item.NameDay == "SAT")
+                    if (item.Day == "SAT")
                     {
                         serie15.Add("5", item.People);
                     }
-                    if (item.NameDay == "SUN")
+                    if (item.Day == "SUN")
                     {
                         serie15.Add("6", item.People);
                     }
                 }
-                if (item.HoursAct == 16)
+                if (item.Hour == 16)
                 {
-                    if (item.NameDay == "MON")
+                    if (item.Day == "MON")
                     {
                         serie16.Add("0", item.People);
                     }
-                    if (item.NameDay == "TUE")
+                    if (item.Day == "TUE")
                     {
                         serie16.Add("1", item.People);
                     }
-                    if (item.NameDay == "WED")
+                    if (item.Day == "WED")
                     {
                         serie16.Add("2", item.People);
                     }
-                    if (item.NameDay == "THU")
+                    if (item.Day == "THU")
                     {
                         serie16.Add("3", item.People);
                     }
-                    if (item.NameDay == "FRI")
+                    if (item.Day == "FRI")
                     {
                         serie16.Add("4", item.People);
                     }
-                    if (item.NameDay == "SAT")
+                    if (item.Day == "SAT")
                     {
                         serie16.Add("5", item.People);
                     }
-                    if (item.NameDay == "SUN")
+                    if (item.Day == "SUN")
                     {
                         serie16.Add("6", item.People);
                     }
                 }
-                if (item.HoursAct == 17)
+                if (item.Hour == 17)
                 {
-                    if (item.NameDay == "MON")
+                    if (item.Day == "MON")
                     {
                         serie17.Add("0", item.People);
                     }
-                    if (item.NameDay == "TUE")
+                    if (item.Day == "TUE")
                     {
                         serie17.Add("1", item.People);
                     }
-                    if (item.NameDay == "WED")
+                    if (item.Day == "WED")
                     {
                         serie17.Add("2", item.People);
                     }
-                    if (item.NameDay == "THU")
+                    if (item.Day == "THU")
                     {
                         serie17.Add("3", item.People);
                     }
-                    if (item.NameDay == "FRI")
+                    if (item.Day == "FRI")
                     {
                         serie17.Add("4", item.People);
                     }
-                    if (item.NameDay == "SAT")
+                    if (item.Day == "SAT")
                     {
                         serie17.Add("5", item.People);
                     }
-                    if (item.NameDay == "SUN")
+                    if (item.Day == "SUN")
                     {
                         serie17.Add("6", item.People);
                     }
                 }
-                if (item.HoursAct == 18)
+                if (item.Hour == 18)
                 {
-                    if (item.NameDay == "MON")
+                    if (item.Day == "MON")
                     {
                         serie18.Add("0", item.People);
                     }
-                    if (item.NameDay == "TUE")
+                    if (item.Day == "TUE")
                     {
                         serie18.Add("1", item.People);
                     }
-                    if (item.NameDay == "WED")
+                    if (item.Day == "WED")
                     {
                         serie18.Add("2", item.People);
                     }
-                    if (item.NameDay == "THU")
+                    if (item.Day == "THU")
                     {
                         serie18.Add("3", item.People);
                     }
-                    if (item.NameDay == "FRI")
+                    if (item.Day == "FRI")
                     {
                         serie18.Add("4", item.People);
                     }
-                    if (item.NameDay == "SAT")
+                    if (item.Day == "SAT")
                     {
                         serie18.Add("5", item.People);
                     }
-                    if (item.NameDay == "SUN")
+                    if (item.Day == "SUN")
                     {
                         serie18.Add("6", item.People);
                     }
                 }
-                if (item.HoursAct == 19)
+                if (item.Hour == 19)
                 {
-                    if (item.NameDay == "MON")
+                    if (item.Day == "MON")
                     {
                         serie19.Add("0", item.People);
                     }
-                    if (item.NameDay == "TUE")
+                    if (item.Day == "TUE")
                     {
                         serie19.Add("1", item.People);
                     }
-                    if (item.NameDay == "WED")
+                    if (item.Day == "WED")
                     {
                         serie19.Add("2", item.People);
                     }
-                    if (item.NameDay == "THU")
+                    if (item.Day == "THU")
                     {
                         serie19.Add("3", item.People);
                     }
-                    if (item.NameDay == "FRI")
+                    if (item.Day == "FRI")
                     {
                         serie19.Add("4", item.People);
                     }
-                    if (item.NameDay == "SAT")
+                    if (item.Day == "SAT")
                     {
                         serie19.Add("5", item.People);
                     }
-                    if (item.NameDay == "SUN")
+                    if (item.Day == "SUN")
                     {
                         serie19.Add("6", item.People);
                     }
                 }
-                if (item.HoursAct == 20)
+                if (item.Hour == 20)
                 {
-                    if (item.NameDay == "MON")
+                    if (item.Day == "MON")
                     {
                         serie20.Add("0", item.People);
                     }
-                    if (item.NameDay == "TUE")
+                    if (item.Day == "TUE")
                     {
                         serie20.Add("1", item.People);
                     }
-                    if (item.NameDay == "WED")
+                    if (item.Day == "WED")
                     {
                         serie20.Add("2", item.People);
                     }
-                    if (item.NameDay == "THU")
+                    if (item.Day == "THU")
                     {
                         serie20.Add("3", item.People);
                     }
-                    if (item.NameDay == "FRI")
+                    if (item.Day == "FRI")
                     {
                         serie20.Add("4", item.People);
                     }
-                    if (item.NameDay == "SAT")
+                    if (item.Day == "SAT")
                     {
                         serie20.Add("5", item.People);
                     }
-                    if (item.NameDay == "SUN")
+                    if (item.Day == "SUN")
                     {
                         serie20.Add("6", item.People);
                     }
                 }
-                if (item.HoursAct == 21)
+                if (item.Hour == 21)
                 {
-                    if (item.NameDay == "MON")
+                    if (item.Day == "MON")
                     {
                         serie21.Add("0", item.People);
                     }
-                    if (item.NameDay == "TUE")
+                    if (item.Day == "TUE")
                     {
                         serie21.Add("1", item.People);
                     }
-                    if (item.NameDay == "WED")
+                    if (item.Day == "WED")
                     {
                         serie21.Add("2", item.People);
                     }
-                    if (item.NameDay == "THU")
+                    if (item.Day == "THU")
                     {
                         serie21.Add("3", item.People);
                     }
-                    if (item.NameDay == "FRI")
+                    if (item.Day == "FRI")
                     {
                         serie21.Add("4", item.People);
                     }
-                    if (item.NameDay == "SAT")
+                    if (item.Day == "SAT")
                     {
                         serie21.Add("5", item.People);
                     }
-                    if (item.NameDay == "SUN")
+                    if (item.Day == "SUN")
                     {
                         serie21.Add("6", item.People);
                     }
                 }
-                if (item.HoursAct == 22)
+                if (item.Hour == 22)
                 {
-                    if (item.NameDay == "MON")
+                    if (item.Day == "MON")
                     {
                         serie22.Add("0", item.People);
                     }
-                    if (item.NameDay == "TUE")
+                    if (item.Day == "TUE")
                     {
                         serie22.Add("1", item.People);
                     }
-                    if (item.NameDay == "WED")
+                    if (item.Day == "WED")
                     {
                         serie22.Add("2", item.People);
                     }
-                    if (item.NameDay == "THU")
+                    if (item.Day == "THU")
                     {
                         serie22.Add("3", item.People);
                     }
-                    if (item.NameDay == "FRI")
+                    if (item.Day == "FRI")
                     {
                         serie22.Add("4", item.People);
                     }
-                    if (item.NameDay == "SAT")
+                    if (item.Day == "SAT")
                     {
                         serie22.Add("5", item.People);
                     }
-                    if (item.NameDay == "SUN")
+                    if (item.Day == "SUN")
                     {
                         serie22.Add("6", item.People);
                     }
                 }
-                if (item.HoursAct == 23)
+                if (item.Hour == 23)
                 {
-                    if (item.NameDay == "MON")
+                    if (item.Day == "MON")
                     {
                         serie23.Add("0", item.People);
                     }
-                    if (item.NameDay == "TUE")
+                    if (item.Day == "TUE")
                     {
                         serie23.Add("1", item.People);
                     }
-                    if (item.NameDay == "WED")
+                    if (item.Day == "WED")
                     {
                         serie23.Add("2", item.People);
                     }
-                    if (item.NameDay == "THU")
+                    if (item.Day == "THU")
                     {
                         serie23.Add("3", item.People);
                     }
-                    if (item.NameDay == "FRI")
+                    if (item.Day == "FRI")
                     {
                         serie23.Add("4", item.People);
                     }
-                    if (item.NameDay == "SAT")
+                    if (item.Day == "SAT")
                     {
                         serie23.Add("5", item.People);
                     }
-                    if (item.NameDay == "SUN")
+                    if (item.Day == "SUN")
                     {
                         serie23.Add("6", item.People);
                     }
@@ -1063,18 +1064,18 @@ namespace BBBWebApiCodeFirst.Converters
 
         public JObject TableHomeDayJson(List<TableHomeDayDTO> list)
         {
-            var obj = new JObject();            
+            var obj = new JObject();
             JArray objArray = new JArray();
-            var index = 1;         
+            var index = 1;
 
             foreach (TableHomeDayDTO item in list)
-            {                
+            {
                 var objInside = new JObject();
                 objInside.Add("id", index++);
-                objInside.Add("day", item.NameDay);
-                objInside.Add("hour", item.HoursAct);
-                objInside.Add("people", item.CountAct);
-                objArray.Add(objInside);                
+                objInside.Add("day", item.Description);
+                objInside.Add("hour", item.Hour);
+                objInside.Add("people", item.People);
+                objArray.Add(objInside);
             }
 
             obj.Add("td", objArray);
@@ -1092,7 +1093,7 @@ namespace BBBWebApiCodeFirst.Converters
             {
                 var objInside = new JObject();
                 objInside.Add("id", index++);
-                objInside.Add("day", item.NameDay);               
+                objInside.Add("day", item.Description);
                 objInside.Add("people", item.People);
                 objArray.Add(objInside);
             }

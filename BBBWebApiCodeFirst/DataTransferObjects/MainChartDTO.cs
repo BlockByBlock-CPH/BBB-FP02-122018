@@ -12,7 +12,7 @@ namespace BBBWebApiCodeFirst.DataTransferObjects
     {        
         public int Id { get; set; }
 
-        public string Description { get; set; }
+        public string Day { get; set; }
 
         public int Hour { get; set; }
 

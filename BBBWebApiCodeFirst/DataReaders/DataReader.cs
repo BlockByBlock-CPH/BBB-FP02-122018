@@ -48,7 +48,7 @@ namespace BBBWebApiCodeFirst.DataReaders
             var obj = new JObject();
 
             int id = reader.GetInt32(0);
-            string description = reader.GetString(1);
+            string day = reader.GetString(1);
             int hour = reader.GetInt32(2);
             int people = reader.GetInt32(3);
             decimal density = reader.GetDecimal(4);
@@ -56,7 +56,7 @@ namespace BBBWebApiCodeFirst.DataReaders
             MainChartDTO mainChartDTO = new MainChartDTO
             {
                 Id = id,
-                Description = description,
+                Day = day,
                 Hour = hour,
                 People = people,
                 Density = density
@@ -127,6 +127,23 @@ namespace BBBWebApiCodeFirst.DataReaders
             };
             return areaOfInfluenceDTO;            
             
+        }
+
+        public HomeZoneWheelDTO ReadHomeZoneWheelDTO(NpgsqlDataReader reader)
+        {
+            decimal fraction = reader.GetDecimal(0);
+            int distance = reader.GetInt32(1);
+            int people = reader.GetInt32(2);
+
+            HomeZoneWheelDTO areaOfInfluenceDTO = new HomeZoneWheelDTO
+            {
+                Fraction = fraction,
+                Distance = distance,
+                People = people
+            };
+
+            return areaOfInfluenceDTO;
+
         }
     }
 }
